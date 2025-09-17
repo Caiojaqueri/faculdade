@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de tabelas</title>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+        tr{
+            border: 1px solid black;
+        }
+        th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--Tabelas Simples-->
+    <h1>Tabela Simples</h1>
+    <table width="10%">
+        <tr>
+            <td>Alex</td>
+            <td>HTML</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>Ana</td>
+            <td>HTML</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <!--Tabela com título -->
+    <h1>Tabela com Títilo</h1>
+    <table width="10%">
+        <tr>
+            <th>Aluno</th>
+            <th>Diciplina</th>
+            <th>Notas</th>
+        </tr>
+
+         <tr>
+            <td>Alex</td>
+            <td>HTML</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>Ana</td>
+            <td>HTML</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <!--Tabela com cabeçalho e rodapé-->
+    <h1>Tabelas com Cabelçalhos e Rodapé</h1>
+    <table width="10%">
+        <thead> <!--cabeçalho-->
+            <tr>
+                <th>Mês</th>
+                <th>Horas/Aulas</th>
+            </tr>
+        </thead>
+        <tbody><!--corpo-->
+            <tr>
+                <td>Julho</td>
+                <td>40</td>
+            </tr>
+        </tbody>
+        <tfoot><!--rodapé-->
+            <tr>
+                <th>Total</th>
+                <th>70</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!--Tabela com Colspan ou Rowspan-->
+    <h1>Tabela simples com Colspan</h1>
+    <table>
+        <tr>
+            <td>ALuno</td>
+            <td colspan="2">Disciplina</td>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>HTML</td>
+            <td>Ambiente web</td>
+        </tr>
+    </table>
+</body>
+</html>

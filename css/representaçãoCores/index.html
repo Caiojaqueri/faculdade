@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Representação de cores com RGB e HSL</title>
+    <style>
+
+        div{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-right: 2px;
+        }
+        #rgb{
+            background-color: rgb(255, 0, 51);
+        }
+        #rgba{ /*a- opacidade da cor*/
+            background-color: rgba(255, 0, 51, 40%);
+        }
+
+        #hsl{
+            background-color: hsl(0, 100%, 50%);
+        }
+        #hsla{
+            background-color: hsla(0, 100%, 50%, 40%);
+        }
+    </style>
+</head>
+<body>
+    <div id="conteiner">
+        <div id="rgb">
+            RGB - Red, Green e Blue
+        </div>
+        <div id="rgba">
+            RGBA
+        </div>
+        <div id="hsl">
+            HSL, Hue, Saturation e Lightness
+        </div>
+        <div id="hsla">
+            HSLA
+        </div>
+    </div>
+</body>
+</html>

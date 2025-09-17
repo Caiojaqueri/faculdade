@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando Ajax</title>
+</head>
+<body>
+    <h1>API de teste httpbin</h1>
+    <form action="" method="get"></form><!--formulário para enviar dados-->
+        <label for="nome">Nome: </label>
+        <input type="text" id="n1">
+        <a href="#" onclick="executar()">Executar</a>
+    </form>
+    <div id="retorno"></div>
+
+    <script src="ajax.js"></script><!--script externo para a função ajax-->
+
+    <script>// função para executar a chamada ajax
+        const executar = () => {// obtém o valor do campo de texto e chama a função ajax
+            const nome = document.getElementById('n1').value;// obtém o valor do campo de texto
+            ajax(nome, "retorno");// chama a função ajax passando o nome e o id do elemento onde o retorno será exibido
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores usando o comando for in</title>
+</head>
+<body>
+    <h2>For in com vetores </h2>
+    <p>Intereção nos elementos de um vetor:</p>
+    <p id="d1"></p>
+
+    <script>
+        const carros = ["BMW ", "Volvo ", "Fiat ", "Audi "]; //vetor de carros
+        let texto = ""; //variável para armazenar o texto
+        for (let x in carros) { //para cada índice x no vetor carros
+            texto += carros[x] + " "; //adiciona o carro correspondente ao texto
+        }
+        document.getElementById("d1").innerHTML = texto; //exibe o texto no elemento com id d1
+    </script>
+</body>
+</html>

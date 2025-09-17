@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional If</title>
+</head>
+<body>
+    <h2>Estutura if</h2>
+    <p>Apresenta "Bom dia!" se for menos que 12:00</p>
+    <p id="demo">Já passou de meio-dia</p>
+    <script>
+        if(newDate().getHours() < 12) { 
+            //verifica se a hora é menor que 12
+            // Se for, exibe "Bom dia!"
+            document.getElementById("demo").innerHTML = "Bom dia!";
+        } 
+        else {
+            // Se não for, exibe "Já passou de meio-dia"
+            document.getElementById("demo").innerHTML
+        }
+    </script>
+</body>
+</html>

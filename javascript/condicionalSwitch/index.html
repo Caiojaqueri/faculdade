@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionl switch case</title>
+</head>
+<body>
+    <h1>Utilizando o comando switch</h1>
+    <p id="demo"></p>
+
+    <script>
+        let day;
+        switch(new Date().getDay()) { // Obtém o dia da semana atual
+            // O método getDay() retorna um número de 0 (Domingo) a 6 (Sábado)
+            // O switch avalia o valor retornado por getDay()
+            case 0: // Se for 0, é Domingo
+                day = "Domingo";
+                break; 
+            case 1: // Se for 1, é Segunda-feira
+                day = "Segunda-feira";
+                break;
+            case 2: // Se for 2, é Terça-feira
+                day = "Terça-feira";
+                break;
+            case 3: // Se for 3, é Quarta-feira
+                day = "Quarta-feira";
+                break;
+            case 4: // Se for 4, é Quinta-feira
+                day = "Quinta-feira";
+                break;
+            case 5: // Se for 5, é Sexta-feira
+                day = "Sexta-feira";
+                break;
+            default: day = "Sábado"; // Se não for nenhum dos anteriores, é Sábado
+                break;// Interrompe o switch após encontrar o caso correspondente
+            
+        }
+        document.getElementById("demo").innerHTML = "Hoje é " + day + ".";
+        // Exibe o dia da semana atual
+    </script>
+</body>
+</html>

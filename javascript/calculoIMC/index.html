@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo imc com estruturas condicionais</title>
+</head>
+<body>
+    <h1>Cálculo do IMC</h1>
+    <form id="imcForm"> <!-- Formulário para entrada de dados -->
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" required>
+        <br>
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" id="altura" name="altura" required>
+        <br>
+        <button type="submit">Calcular IMC</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script> // Script para calcular o IMC e classificar
+        document.getElementById('imcForm').addEventListener('submit', function(event) { 
+            event.preventDefault();
+            const peso = parseFloat(document.getElementById('peso').value); // Pega o valor do peso
+            const altura = parseFloat(document.getElementById('altura').value); // Pega o valor da altura
+            const imc = peso / (altura * altura);
+            let classificacao; // Variável para armazenar a classificação do IMC
+
+            if (imc < 18.5) {
+                classificacao = 'Abaixo do peso';
+            } else if (imc >= 18.5 && imc < 24.9) {
+                classificacao = 'Peso normal';
+            } else if (imc >= 25 && imc < 29.9) {
+                classificacao = 'Sobrepeso';
+            } else {
+                classificacao = 'Obesidade';
+            }
+
+            document.getElementById('resultado').innerHTML = `Seu IMC é ${imc.toFixed(2)} - ${classificacao}`;
+            //to fixed(2) limita o número de casas decimais para 2
+        });
+    </script>
+</body>
+</html>

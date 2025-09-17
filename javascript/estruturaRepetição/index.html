@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de repetição</title>
+</head>
+<body>
+    <h1>While</h1>
+    <script>
+        let a = 1;
+        while (a <= 10) { //enquanto a for menor ou igual a 10
+            console.log(a); //imprime o valor de a
+            a++; //incrementa o valor de a em 1
+        } 
+
+        // Loop que imprime os números de 1 a 10
+    </script>
+
+
+
+    <h1>Do while</h1>
+    <script>
+        let b = 1;
+        do { //faça
+            console.log(b); //imprime o valor de b
+            b++; //incrementa o valor de b em 1
+        } while (b <= 10); //enquanto b for menor ou igual a 10
+
+        // Loop que imprime os números de 1 a 10, garantindo que o bloco seja executado pelo menos uma vez
+    </script>
+
+
+
+    <h1>Para Faça</h1>
+    <script>
+        for (let a=1; a <= 10; a++) { //inicializa a variável a com 1, enquanto a for menor ou igual a 10, incrementa a em 1
+            console.log(a); //imprime o valor de a
+        }
+
+        // Loop que imprime os números de 1 a 10 usando a estrutura for, a diferença é que o loop é mais compacto
+    </script>
+
+
+
+    <h1>For in</h1>
+    <script>
+        const pessoa = { // interação em objeto = pessoa
+            nome: 'João', //nome da pessoa
+            idade: 30, //idade da pessoa
+            cidade: 'São Paulo' //cidade da pessoa
+        }
+
+        for (let chave in pessoa) { //para cada chave no objeto pessoa
+            console.log(`${chave}: ${pessoa[chave]}`); //imprime a chave e o valor correspondente
+        }
+
+
+        // Loop que itera sobre as chaves de um objeto e imprime cada chave e seu valor
+    </script>
+</body>
+</html>

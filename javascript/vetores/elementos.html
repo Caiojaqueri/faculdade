@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adição e remoção de elementos dos vetores </title>
+</head>
+<body>
+    <h1>Adição de elementos </h1>
+    <script>
+        const valores = [1, 2, 3, 4, 5];
+        console.log(valores);
+
+        valores.push(6); // Adiciona o elemento 6 ao final do vetor
+        console.log(valores); 
+
+        valores.unshift(0); // Adiciona o elemento 0 ao início do vetor
+        console.log(valores);
+        // [0,1,2,3,4,5,6]
+    </script>
+
+    <h2>Remoção de Elementos </h2>
+    <script>
+        const valores2 = [1, 2, 3, 4, 5];
+        console.log(valores2);
+
+        valores2.pop(); // Remove o último elemento do vetor
+        console.log(valores2);
+
+        valores2.shift(); // Remove o primeiro elemento do vetor
+        console.log(valores2); 
+        //[2,3,4] 
+    </script>
+
+    <h2>Adição e Remoção com splice</h2>
+    <script>
+        const vetor = [1, 2, 3, 4, 5, 6, 7, 8];
+        console.log(vetor);
+
+        vetor.splice(2, 0, 'a', 'b'); // a partir da posição 2, não remove nada, adiciona 'a' e 'b'
+        console.log(vetor); // [1, 2, 'a', 'b',
+    </script>
+</body>
+</html>

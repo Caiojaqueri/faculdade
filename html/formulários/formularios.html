@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários html</title>
+</head>
+<body>
+    <form action="pagina.php" method="post">
+
+    <fieldset>
+        <legend>Dados Gerais</legend>
+
+        <label for="nome">Nome:</label>
+        <input type="text" minlength="3" id="nome">
+        <!--minlength-minimo 3 caracteres-->
+
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="text" id="data_nascimento">
+
+        <label for="cpf">CPF:</label>
+        <input type="number" minlength="11" id="cpf">
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Endereço</legend>
+
+        <label for="tipo_endereco">Tipo:</label>
+        <select id="tipo_endereco">
+            <option value="">Rua</option>
+            <option value="">Estrada</option>
+            <option value="">Rodovia</option>
+            <option value="">Outros</option>
+        </select>
+
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" id="logradouro">
+
+        <label for="numero">Número:</label>
+        <input type="number" id="numero">
+
+        <label for="complemento">Complemento:</label>
+        <input type="number" id="complemento">
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Fale Conosco</legend>
+
+        <label for="mensagem">Mensagem:</label>
+
+        <textarea type="text" id="mensagem"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <button type="submit">Enviar sua mensagem</button>
+
+        <button type="reset">Limpar o Formulário</button>
+    </fieldset>
+    
+    </form>
+    
+</body>
+</html>

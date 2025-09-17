@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Fibonacci</title>
+    <!--com estrutura de repetição while-->
+</head>
+<body>
+    <h1>Série de Fibonacci</h1>
+    <form>
+        <label>Valor de X</label>
+        <input type="number" id="v1">
+        <a href="#" onclick = "executar()">Executar</a>
+    </form>
+    <div id="resp">O resultado aparece aqui</div>
+    
+    <script src="calculo.js"></script>
+
+    <script>
+        const executar = () => {
+            const x = eval(document.getElementById('v1').value);
+            let serie = "", i=0;
+            while (i<=x) {serie += fibonacci(i) + " "; i++;}
+            document.getElementById('resp').innerHTML = `Resultado: ${serie}`;
+        }
+    </script>
+</body>
+</html>

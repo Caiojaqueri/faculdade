@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posiciopnamentos de layout</title>
+    <style>
+        #row{
+            display: flex;
+            flex-direction: row;
+            background-color: lightblue;
+        }
+        #col{
+            display: flex;
+            flex-direction: column;
+            background-color: lightgreen;
+        }
+        #grid{
+            display: grid;
+            grid-template-columns:
+                100px 100px 100px 100px 100px 100px;
+            /*grid-template-rows:
+                100px 200px 10px 100px 200px 10px;*/
+            background-color: lightcoral;
+            margin-right: 800px;
+        }
+
+        #absolut{
+            position: absolute;
+            top: 80px;
+            right: 0px;
+            background-color: blue;
+            padding: 10px;
+        }
+        #estatica{
+            border: 3px solid black;
+            width: 300px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox row</h1>
+    <div id="row">
+        <div>flexbox1</div>
+        <div>flexbox2</div>
+        <div>flexbox3</div>
+    </div>
+
+    <h1>Flexbox col</h1>
+    <div id="col">
+        <div>Flexbox1</div>
+        <div>Flexbox2</div>
+        <div>Flexbox3</div>
+    </div>
+    
+    <h1>Grid</h1>
+    <div id="grid">
+        <div>colunas1</div>
+        <div>colunas2</div>
+        <div>colunas3</div>
+        <div>colunas4</div>
+        <div>colunas5</div>
+        <div>colunas6</div>
+    </div>
+
+
+    <h1>Posição absoluta </h1>
+    <div id="absolut">posicionamento absoluto</div>
+
+
+    <h1>Posicão estática </h1>
+    <div id="estática">Posicionamento estático</div>
+
+    <h1>Posicionamento relativo</h1>
+
+    
+</body>
+</html>
