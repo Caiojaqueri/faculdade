@@ -1,3 +1,5 @@
+# programa que leia as duas notas de um aluno, calcule e mostre a sua média
+
 av1 = float(input('Digite a nota da AV1: '))
 av2 = float(input('Digite a nota da AV2: '))
 media = (av1 + av2) / 2

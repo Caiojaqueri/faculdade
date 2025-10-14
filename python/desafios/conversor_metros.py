@@ -1,3 +1,5 @@
+#converte metros em centímetros e milímetros
+
 medida = float(input('Digite uma distância em métros: '))
 cm = medida * 100
 mm = medida * 1000

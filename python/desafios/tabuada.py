@@ -1,3 +1,5 @@
+#programa que leia um número inteiro e mostre sua tabuada
+
 n = int(input('Digite um número para ver sua tabuada: '))
 print('-' *12)
 print('{} x {:2} = {}'.format(n, 1, n*1))
