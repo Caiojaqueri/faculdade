@@ -5,6 +5,7 @@ if tempo <= 3:
 else: 
     print('Carro velho!')
 print('--FIM--')
+
 # os comandos com a identação para dentso, é o que define o bloco de código que pertence ao if ou ao else. Um ou outro vai aparecer, nunca os dois juntos.
 
 # Condição Simplificada 

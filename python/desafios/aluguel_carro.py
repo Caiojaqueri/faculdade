@@ -4,5 +4,3 @@ dias = int(input('Digite a quantidade de dias que o carro foi alugado: '))
 km = float(input('Digite a quantidade de km percorridos: '))
 pago = (dias * 60) + (km * 0.15)
 print('O total a pagar pelo aluguel do carro é de R${:.2f}'.format(pago))
-
-
