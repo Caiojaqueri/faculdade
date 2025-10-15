@@ -1,3 +1,6 @@
+#MANIPULAÇÃO DE STRINGS
+
+
 frase = 'Curso em Vídeo Python'
 #FATIAMENTO
 print(frase[9]) #imprime a letra na posição 9
