@@ -26,7 +26,7 @@ struct Livro {
 };
 
 //Função para limpar o buffer de entrada
-void limparBuffer() {
+void limparBufferEntrada() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
@@ -93,12 +93,34 @@ int main() {
                 printf("--- Lista de Livros Cadastrados ---\n\n");
 
                 if(totallivros == 0) {
-                    printf('Nenhum Livro cadastrado ainda. \n');
+                    printf("Nenhum Livro cadastrado ainda.\n"); 
                 } else {
-                    for (int i = 0; i < totallivros; i++);
-                        printf("")
+                    for (int i = 0; i < totallivros; i++) {
+                        printf("-----------------------------------\n");
+                        printf("LIVRO %d\n", i + 1);
+                        printf("Nome: %s\n", biblioteca[i].nome);
+                        printf("Autor: %s\n", biblioteca[i].autor);
+                        printf("Editora: %s\n", biblioteca[i].editora);
+                        printf("Edicao: %d\n", biblioteca[i].edicao);
+                    }
+                    printf("------------------------------------------\n");
                 }
-                
+                //a pausa é crucial para que o usuário veja a lista anyes do proprio loop limpar a tela
+                printf("\nPressione Enter para continuar...");
+                getchar();
+                break;
+
+            case 0: //SAIR
+                printf("\nSaindo do sistema...\n");
+                break;
+
+            default: //OPÇÃO INVÁLIDA
+                printf("\nOpcao invalida! Tente novamente...\n");
+                printf("\nPressione Enter para continuar...");
+                getchar();
+                break;
         }
-    }
-}
+    } while (opcao != 0);
+
+    return 0; //FIM DO PROGRAMA
+};
