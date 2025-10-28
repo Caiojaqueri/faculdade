@@ -36,4 +36,69 @@ int main() {
     struct Livro biblioteca [ MAX_LIVROS ];
     int totallivros = 0;
     int opcao;
+
+    //laço principal
+    do {
+
+        //exibe o menu
+        printf("====================================\n");
+        printf("        BIBLIOTECA - PARTE 1'       \n");
+        printf("====================================\n");
+        printf("1 - Cadastrar novo livro\n");
+        printf("2 - Listar todos os livros\n");
+        printf("0 - Sair\n");
+        printf("------------------------------------\n");
+        printf("Escolha uma opcao: ");
+
+        //lê a opção do usuário
+        scanf("%d", &opcao);
+        limparBufferEntrada(); //limpa o '\n' deixado pelo scanf
+
+        //processamento da opção
+        switch (opcao) {
+            case 1: //CADASTRO DE LIVRO
+                printf("---Cadastro de Novo Livro ---\n\n");
+
+                if (totallivros < MAX_LIVROS) {
+                    printf("Nome do Livro: ");
+                    fgets(biblioteca[totallivros].nome, TAM_STRING, stdin);
+
+                    printf("Autor do Livro: ");
+                    fgets(biblioteca[totallivros].autor, TAM_STRING, stdin);
+
+                    printf("Editora do Livro: ");
+                    fgets(biblioteca[totallivros].editora, TAM_STRING, stdin);
+
+                    biblioteca[totallivros].nome[strcspn(biblioteca[totallivros].nome, "\n")] = '\0';
+                    biblioteca[totallivros].autor[strcspn(biblioteca[totallivros].autor, "\n")] = '\0';
+                    biblioteca[totallivros].editora[strcspn(biblioteca[totallivros].editora, "\n")] = '\0';
+
+                    printf("Edicao do Livro: ");
+                    scanf("%d", &biblioteca[totallivros].edicao);
+                    limparBufferEntrada();
+
+                    totallivros++;
+                    //totallivros = totallivros + 1;
+
+                    printf("\nLivro Cadastrado com sucesso!\n");
+                } else {
+                    printf("Biblioteca cheia! Nao e possivel cadastrar mais livros.\n");
+                }
+
+                printf("\nPressione Enter para continuar...");
+                getchar(); //pausa para o usuário ler a mensagem antes de voltar
+                break;
+
+            case 2: //LISTAGEM DE LIVROS 
+                printf("--- Lista de Livros Cadastrados ---\n\n");
+
+                if(totallivros == 0) {
+                    printf('Nenhum Livro cadastrado ainda. \n');
+                } else {
+                    for (int i = 0; i < totallivros; i++);
+                        printf("")
+                }
+                
+        }
+    }
 }
