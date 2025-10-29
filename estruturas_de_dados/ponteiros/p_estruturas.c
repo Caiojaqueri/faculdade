@@ -16,7 +16,7 @@ int main() {
     printf("Digite sua idade: ");
     scanf("%d", &p -> idade);//agora usamos a seta
 
-    printf("%s tem %d anos,\n", p->nome, p->idade);
+    printf("%s tem %d anos\n", p->nome, p->idade);
 
     free(p);
 
