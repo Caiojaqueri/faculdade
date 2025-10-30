@@ -90,15 +90,64 @@ int main() {
 
     //Fase de ataque
     printf("==============================================\n");
-    printf("                FASE DE ATAQUE              ");
+    printf("                FASE DE ATAQUE               \n");
     printf("==============================================\n");
-    printf("Escolha o territorio ATACANTE (ou 0 para sair):");
 
+    int atacante, defensor;
+    do {
+        printf("\nEscolha o territorio ATACANTE (1-5, ou 0 para encerrar): ");
+        scanf("%d", &atacante);
+        limparBufferEntrada();
 
+        if (atacante == 0) break;
 
+        if (atacante < 1 || atacante > 5) {
+            printf("Territorio invalido! Escolha entre 1 e 5.\n");
+            continue;
+        }
 
-    //liberacao da memoria
-    free(lista);
+        printf("Escolha o territorio DEFENSOR (1-5): ");
+        scanf("%d", &defensor);
+        limparBufferEntrada();
+
+        if (defensor < 1 || defensor > 5 || defensor == atacante) {
+            printf("Territorio invalido! Escolha outro territorio entre 1 e 5.\n");
+            continue;
+        }
+
+        // Realiza a batalha
+        batalha(&lista[atacante-1], &lista[defensor-1]);
+
+        // Mostra placar parcial
+        printf("\n--- Placar Parcial ---\n");
+        for(int i = 0; i < 5; i++) {
+            printf("%s: %d vitorias\n", lista[i].nome, lista[i].vitorias);
+        }
+
+    } while (1);
+
+    // Mostra placar final
+    printf("\n==============================================\n");
+    printf("              RESULTADO FINAL                \n");
+    printf("==============================================\n");
+
+    // Encontra o território com mais vitórias
+    int max_vitorias = 0;
+    for(int i = 0; i < 5; i++) {
+        if (lista[i].vitorias > max_vitorias) {
+            max_vitorias = lista[i].vitorias;
+        }
+    }
+
+    // Mostra as estatísticas finais
+    printf("\nEstatisticas finais:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%s: %d vitorias", lista[i].nome, lista[i].vitorias);
+        if (lista[i].vitorias == max_vitorias && max_vitorias > 0) {
+            printf(" [VENCEDOR]");
+        }
+        printf("\n");
+    }
 
     return 0;
-};
+}
