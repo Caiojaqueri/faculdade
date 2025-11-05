@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h> //(strcpy)
 
 #define MAX_STR_LEN 50 //tamanho maximo da strings
 #define TAM_MAX 10 //tamanho maximo dos elementos da lista
@@ -79,4 +79,16 @@ void inserirListaEstatica(ListaEstatica *lista, const char* texto){
         printf("Erro: lista cheia! Nao é possivel inserir mais nada.\n");
         return;
     }
+    //comparação  de strings entre os dados, quantidades de itens e o texto que ira ser inserido 
+    strcpy(lista->dados[lista->quantidade], texto);
+
+    //adiciona o item a lista 
+    lista->quantidade++;
+    printf("Texto \"%s\" inset=rido com sucesso.\n", texto);
+}
+
+void removerListaEstatica(ListaEstatica *lista, const char* texto) {
+    int i, pos = -1;
+    
+    
 }
