@@ -166,9 +166,55 @@ void inserirListaEncadeada(ListaEncadeada *lista, const char* texto) {
 }
 
 void removerListaEncadeada(ListaEncadeada *lista, const char* texto) {
-    
+    //dois ponteiros para percorrer a lista
     No *atual = *lista;
     No *anterior = NULL;
+
+    //enquanto o atual for igual a null compare as string com o texto a ser removido 
+    while (atual != NULL && strcpy(atual->dado, texto) != 0) {
+        anterior = atual;
+        atual = atual->proximo;
+    }
+    
+    if (atual == NULL) {
+        printf("Erro: Texto \"%s\" ao encontrado.\n", texto);
+        return;
+    }
+
+    if (anterior == NULL) {
+        *lista = atual->proximo;
+    } else {
+        anterior->proximo = atual->proximo;
+    }
+
+    //liberamos primeiro a string dentro do nó
+    free(atual->dado);
+
+    //ai sim liberamos o nó
+    free(atual);
+    printf("Texto \"%s\" removido com sucesso.\n", texto);
 }
 
+void listarListaEncadeada(const ListaEncadeada *lista) {
+    No *temp = *lista;
+    if(temp == NULL) {
+        printf("A lista encadeada esta vazia.\n");
+        return;
+    }
+    printf("Itens da lista Encadeada: [ ");
+    while (temp != NULL) {
+        printf("\"%s\" ", temp->dado);
+        temp = temp->proximo;// printa os itens da lista
+    }
+    printf("]\n");
+}
 
+void liberarListaEncadeada(ListaEncadeada *lista) {
+    No *atual = *lista;
+    No *proximo;
+    while (atual != NULL) {
+        proximo = atual->proximo;
+        free(atual->dado);
+        free(atual);
+    }
+}
