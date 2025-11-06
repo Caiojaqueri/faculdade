@@ -27,7 +27,7 @@ typedef struct No {
     struct No *proximo;
 } No;
 
-typedef No* ListaEncadeada;
+typedef No* ListaEncadeada;//atalho  
 
 //funções da lista encadeada
 void inicializarListaEncadeada(ListaEncadeada *lista);
@@ -67,7 +67,8 @@ int main(){
     return 0;
 }
 
-//implementação das funções - lista estatico 
+//============================================================================================================
+//implementação das funções - lista estatica
 
 void inicializarListaEstatica(ListaEstatica *lista) {
     lista->quantidade = 0;
@@ -80,7 +81,7 @@ void inserirListaEstatica(ListaEstatica *lista, const char* texto){
         return;
     }
     //comparação  de strings entre os dados, quantidades de itens e o texto que ira ser inserido 
-    strcpy(lista->dados[lista->quantidade], texto);
+    strcpy(lista->dados[lista->quantidade], texto); //se o dado fosse do tipo inteiro utilizariamos =
 
     //adiciona o item a lista 
     lista->quantidade++;
@@ -89,6 +90,85 @@ void inserirListaEstatica(ListaEstatica *lista, const char* texto){
 
 void removerListaEstatica(ListaEstatica *lista, const char* texto) {
     int i, pos = -1;
-    
-    
+    for (i = 0; i < lista->quantidade; i++) {//navega item po ritem da lista 
+        if (strcpy(lista->dados[i], texto) == 0){ //compara o texto que ira ser retirado com os itens da lista, se forem iguais remove 
+            pos = i;
+            break;
+        }
+    }
+
+    //se caso não for encontrado o texto que desejamos remover 
+    if (pos == -1) {
+        printf("Erro: Texto \"%s\" não encontrado na lista.\n", texto);
+        return;
+    }
+
+    //preenche o espaço do item que removemos deixou, deslocando os elementos para a esquerda
+    for (i = pos; i < lista->quantidade - 1; i++) {
+        strcpy(lista->dados[i], lista->dados[i + 1]);
+    }
+
+    //atualizando o contador e a lista
+    lista->quantidade--;
+    printf("Texto \"%s\" removido com sucesso.\n");
 }
+
+void listarListaEstatica(const ListaEstatica *lista) {
+    if (lista->quantidade == 0) {
+        printf("Lista estatica esta vazia, nao ha nada para listar");
+        return;
+    }
+    printf("Itens da Lista Estatica: [");
+    for (int i = 0; i < lista->quantidade; i ++) {//desde o indice 0 da lista de um a um ++ 
+        printf("\"%s\" ", lista->dados[i]);//printe os itens 
+    }
+    printf("]\n");
+}
+
+//===========================================================================================================
+//Implementação das funções - Lista encadeada
+
+void inicializarListaEncadeada(ListaEncadeada *lista) {
+    //lista aponta para o valor null
+    *lista = NULL;
+}
+
+void inserirListaEncadeada(ListaEncadeada *lista, const char* texto) {
+    //pedindo memória para o novo nó
+    No* novoNo = (No*) malloc(sizeof(No));
+
+    //se caso falhar a alocacao de memória 
+    if (novoNo = NULL) {
+        printf("Erro: Falha na alocacao de memoria\n");
+        return;
+    }
+
+    //reserva espaço na memória para guardar uma cópia da string texto, dentro do novoNo
+    novoNo->dado = (char*) malloc(strlen(texto) + 1);
+
+    //verificação se deu certo 
+    if (novoNo->dado == NULL) {
+        printf("Erro: Falha na alocacao de memoria para o texo.\n");
+        free(novoNo); //libera o nó que já foi alocado
+        return;
+    }
+
+    //copia o texto novo que ira ser inserido
+    strcpy(novoNo->dado, texto);
+
+    //liga o novo nó a lista
+    novoNo->proximo = *lista;
+
+    //atualização da lista com o novo nó
+    *lista = novoNo;
+
+    printf("Texto \"%s\" inserido com sucesso.\n", texto);
+}
+
+void removerListaEncadeada(ListaEncadeada *lista, const char* texto) {
+    
+    No *atual = *lista;
+    No *anterior = NULL;
+}
+
+
