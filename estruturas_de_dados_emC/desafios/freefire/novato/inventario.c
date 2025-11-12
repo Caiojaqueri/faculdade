@@ -87,32 +87,6 @@ void listarItens() {
     }
 }
 
-//função buscar item
-void buscarItem() {
-
-    //se total de itens for igual a zero 
-    if (totalItens == 0) {
-        printf("\nA mochila esta vazia.\n");
-        return;
-    }
-
-    //cadastro de qual item deseja buscar
-    char nomeBusca[30];
-    printf("\n --- Busca de Itens --- \n");
-    printf("Digite o nome do item que deseja buscar: ");
-    scanf("%s", nomeBusca);
-
-    //para cada item da mochila ++, compare e ache 
-    for (int i = 0; i < totalItens; i ++) {
-        if(strcmp(mochila[i].nome, nomeBusca) == 0) {
-            printf("\nItem encontrado!\n");
-            printf("Nome: %s\nTipo: %s\nQuantidade: %d\n", mochila[i].nome, mochila[i].tipo, mochila[i].quantidade);
-            return;
-        }
-    }
-    printf("\nItem nao encontrado!\n");
-}
-
 //função principal main()
 int main() {
 
@@ -127,7 +101,6 @@ int main() {
         printf("1. Cadastrar item\n");
         printf("2. Remover item\n");
         printf("3. Listar itens\n");
-        printf("4. Buscar item\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", opcao);
@@ -144,10 +117,6 @@ int main() {
 
             case 3:
                 listarItens();
-                break;
-            
-            case 4:
-                buscarItem();
                 break;
 
             case 0:
