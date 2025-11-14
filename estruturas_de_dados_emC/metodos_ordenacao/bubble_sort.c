@@ -1,4 +1,6 @@
-// MÉTODOS DE ORDENAÇÃO DE ELEMENTOS DE VETORES 
+// MÉTODOS DE ORDENAÇÃO DE ELEMENTOS DE VETORES
+// BUBBLE SORT - ORDENAÇÃO POR BOLHA 
+// o valor vai "borbulhar" para o final do vetor a casa interação, até organizá-lo completamente 
 
 void bubbleSort(int vetor[], int tamanho){
     //função com o vetor e o tamanho dos elementos 
