@@ -21,7 +21,7 @@ peca gerarPEca(int *contador) {
     return nova;
 }
 
-// Definição da estrutura da fila
+// estrutura e funções da fila
 typedef struct {
     peca itens[TAM_FILA];
     int frente;
@@ -69,3 +69,33 @@ void alteratFila(fila *f, int i, peca p) {
     int pos = (f->frente + i) % TAM_FILA;
     f->itens[pos] = p;
 }
+
+
+//estrutura e funções da pilha 
+typedef struct {
+    peca itens[TAM_PILHA];
+    int topo;
+} pilha;
+
+void inicializarPilha(pilha *p) {
+    p->topo = -1;
+}
+
+int pilhaVazia(pilha *p) {
+    return p->topo == -1;
+}
+
+int pilhaCheia(pilha *p) {
+    return p->topo == TAM_PILHA - 1;
+}   
+
+void push(pilha *p, peca x) {
+    if (!pilhaCheia(p)) p->itens[++(p->topo)] = x;
+}
+
+peca pop(pilha *p) {
+    peca x = {'X', -1}; // peça inválida
+    if (pilhaVazia(p)) return x;
+    return p->itens[(p->topo)--];
+}
+
