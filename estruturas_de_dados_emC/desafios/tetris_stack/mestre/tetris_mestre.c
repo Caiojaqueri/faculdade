@@ -44,7 +44,7 @@ int filaCheia(fila *f) {
 }
 
 void enfileirar(fila *f, peca p) {
-    if (filaCheia(f)) {
+    if (!filaCheia(f)) {
         f->itens[f->tras] = p;
         f->tras = (f->tras + 1) % TAM_FILA;
         f->qtd++;
@@ -156,15 +156,16 @@ int main() {
 
             case 2: {
                 //reservar peça 
-                if (!pilhaCheia(&pilha)) {
+                if (!pilhaCheia(&pilha) && !filaVazia(&fila)) {
                     push(&pilha, desenfileirar(&fila));
                     enfileirar(&fila, gerarPeca(&contador));
                 }
+                break;
             }
 
             case 3: {
                 //usar peça da pilha
-                pop(&pilha);
+                if (!pilhaVazia(&pilha)) pop(&pilha);
                 break;
             }
 
