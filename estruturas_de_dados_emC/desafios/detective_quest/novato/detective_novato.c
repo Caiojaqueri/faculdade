@@ -50,5 +50,23 @@ void explorarSalas(sala* atual) {
 }
 
 int main() {
+    // Criando as salas
+    sala* hall = criarSala("Hall de Entrada");
+    sala* salaEstar = criarSala("Sala de Estar");
+    sala* cozinha = criarSala("Cozinha");
+    sala* quarto = criarSala("Quarto");
+    sala* banheiro = criarSala("Banheiro");
 
+    // Montando a árvore binária
+    hall->esquerda = salaEstar;
+    hall->direita = cozinha;
+    salaEstar->esquerda = quarto;
+    salaEstar->direita = banheiro;
+
+    // Cozinha é nó folha (não recebe filhos)
+
+    printf("=== Detective Quest — Exploração da Mansão ===\n");
+    explorarSalas(hall);
+
+    return 0;
 }
