@@ -14,8 +14,8 @@ int altura(struct No* raiz) { //calcula a altura da árvore
     if (raiz == NULL) //se o nó for nulo, a altura é 0
         return 0;
 
-    int alturaEsquerda = altura(raiz->esquerda); //altura do lado esquerdo = altura da subárvore esquerda
-    int alturaDireita = altura(raiz->direita); //altura do lado direito = altura da subárvore direita
+    int alturaEsquerda = altura(raiz->esquerda); //altura do lado esquerdo = altura da raiz esquerda
+    int alturaDireita = altura(raiz->direita); //altura do lado direito = altura da raiz direita
     return 1 + (alturaEsquerda > alturaDireita ? alturaEsquerda : alturaDireita); //retorna 1 + a maior altura entre os dois lados
 }
 
